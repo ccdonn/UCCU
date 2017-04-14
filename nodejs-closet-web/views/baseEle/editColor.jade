@@ -1,0 +1,32 @@
+extends ../import/_layout.jade
+
+block content
+  script(src='/js/baseEle/editColor.js')
+  link(rel='stylesheet', href='/css/baseEle/editColor.css')
+  link(rel='stylesheet', href='https://fonts.googleapis.com/icon?family=Material+Icons')
+
+  div.form
+    table
+      thead
+        tr
+          th Title
+          th Input
+      tbody
+        tr
+          td ID
+          td
+            input(type="text", name="colorId-text", value="#{data.colorId}", readonly="true")
+        tr
+          td Name
+          td
+            input(type="text", name="colorName-text", value="#{data.name}", placeholder="color name")
+        tr
+          td Picture
+          td
+            div
+              input(type="file", name="colorImage-file")
+            div
+              img(src="#{data.picture}", style="width:100px;")
+  div.sumbit
+    button#colorUpdate-button Update
+  div.color-update-response#color-update-response

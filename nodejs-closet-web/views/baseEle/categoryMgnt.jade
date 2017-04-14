@@ -1,0 +1,39 @@
+extends ../import/_layout.jade
+
+block content
+  script(src='/js/baseEle/categoryMgnt.js')
+  link(rel='stylesheet', href='/css/baseEle/categoryMgnt.css')
+  link(rel='stylesheet', href='https://fonts.googleapis.com/icon?family=Material+Icons')
+
+  div.function-section
+    a.categoryCreate-button(href="/web/baseEle/category/create") Create
+  table
+    thead
+      tr
+        th(colspan="4") Category
+      tr
+        th
+          div(style="paddming:5px;") Name
+        th
+          div Name
+        th(colspan="2")
+          div(style="paddming:5px") Image
+    tbody
+      each item in data
+        tr(meta-id="#{item.categoryId}", meta-pid="#{item.parent}")
+          td(style="display:none") #{item.categoryId}
+          if item.categoryId%1000==0
+            td #{item.name}
+            td
+          else
+            td
+            td #{item.name}
+
+          td
+            .pic(style="padding: 5px;width: 100px")
+              img(style="vertical-align: middle;", src="#{item.picture}")
+          td
+            i.material-icons.button.edit
+              a(href="/web/baseEle/category/#{item.categoryId}/edit") edit
+            i.material-icons.button.delete
+              a(meta-id="#{item.categoryId}", meta-pid="#{item.parent}", meta-name="#{item.name}") delete

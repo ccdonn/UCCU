@@ -1,0 +1,31 @@
+extends ../import/_layout.jade
+
+block content
+  script(src='/js/baseEle/colorMgnt.js')
+  link(rel='stylesheet', href='/css/baseEle/colorMgnt.css')
+  link(rel='stylesheet', href='https://fonts.googleapis.com/icon?family=Material+Icons')
+
+  div.function-section
+    a.colorCreate-button(href="/web/baseEle/color/create") Create
+  table
+    thead
+      tr
+        th(colspan="4") Color
+      tr
+        th
+          div(style="padding:5px;") Name
+        th(colspan="2")
+          div(style="padding:5px") Image
+    tbody
+      each item in data
+        tr(meta-id="#{item.colorId}")
+          td(style="display:none") #{item.colorId}
+          td #{item.name}
+          td
+            .pic(style="padding: 5px;width: 100px")
+              img(style="vertical-align: middle;", src="#{item.picture}")
+          td
+            i.material-icons.button.edit
+              a(href="/web/baseEle/color/#{item.colorId}/edit") edit
+            i.material-icons.button.delete
+              a(meta-id="#{item.colorId}", meta-name="#{item.name}") delete

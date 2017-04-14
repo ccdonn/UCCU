@@ -1,0 +1,22 @@
+extends import/_layout.jade
+
+block content
+	script(src='/js/login.js')
+	#login
+		header
+			h2.logtitle Login Page
+			#status.
+				No Auth/Not Login
+		form(action='#')
+			.input-box
+				label(for='', class='input-name') Name
+				input(type='text', id='name', name='', placeholder='your name' autofocus)
+			.input-box
+				label(for='pass', class='input-pass') Password
+				input(type='password', id='pass', placeholder='Pass word')
+
+			button(id='send') Log in in
+
+			#loginResult
+			#fgtpass.loglink
+				a(href='fgpass.html') forget password.

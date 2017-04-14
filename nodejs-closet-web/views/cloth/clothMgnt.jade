@@ -1,0 +1,41 @@
+extends ../import/_layout.jade
+
+block content
+  script(src='/js/cloth/clothMgnt.js')
+  link(rel='stylesheet', href='/css/cloth/clothMgnt.css')
+  link(rel='stylesheet', href='https://fonts.googleapis.com/icon?family=Material+Icons')
+
+  div.function-section
+    a.clothCreate-button(href="/web/cloth/create") Create
+
+  //- div clothMgnt
+  table
+    thead
+      tr
+        th(colspan="6") Cloth
+      tr
+        th Picture
+        th Name
+        th Category
+        th Color
+        th(colspan="2") Link
+    tbody
+      each item in data
+        tr
+          td
+            div
+              img(src="#{item.picture}")
+          td
+            div.name #{item.name}
+          td
+            div.category #{item.category.name}
+          td
+            div.color #{item.color.name}
+          td
+            div.link
+              a(href="#{item.link}") Link
+          td
+            i.material-icons.button.edit
+              a(href="/web/cloth/#{item.itemId}/edit") edit
+            i.material-icons.button.delete
+              a(meta-id="#{item.itemId}", meta-name="#{item.name}") delete

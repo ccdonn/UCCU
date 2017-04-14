@@ -1,0 +1,20 @@
+extends ../import/_layout.jade
+
+block content
+  script(src='/js/profile/ChangePasswd.js')
+
+  #changePass
+    header
+      h1.logtitle Change Password Page
+      div.passwd-section
+        span Current
+        input#c-pwd(type='password', autofocus)
+        br
+        span New
+        input#n-pwd(type='password', autofocus)
+        br
+        span Re-New
+        input#rn-pwd(type='password', autofocus)
+      button#btn-chpasswd Change Password
+      br
+      div#status

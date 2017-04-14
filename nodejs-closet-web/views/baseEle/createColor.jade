@@ -1,0 +1,28 @@
+extends ../import/_layout.jade
+
+block content
+  script(src='/js/baseEle/createColor.js')
+  link(rel='stylesheet', href='/css/baseEle/createColor.css')
+  link(rel='stylesheet', href='https://fonts.googleapis.com/icon?family=Material+Icons')
+
+  div.form
+    table
+      thead
+        tr
+          th Title
+          th Input
+      tbody
+        tr
+          td ID
+          td
+            input(type="text", value="", readonly="true")
+        tr
+          td Name
+          td
+            input(type="text", name="colorName-text", value="", placeholder="color name")
+        tr
+          td Picture
+          td
+            input(type='file', name="colorImage-file")
+  button.sumbit#colorCreate-button Create
+  div.color-create-response#color-create-response

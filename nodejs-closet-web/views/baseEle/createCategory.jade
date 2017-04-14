@@ -1,0 +1,41 @@
+extends ../import/_layout.jade
+
+block content
+  script(src='/js/baseEle/createCategory.js')
+  link(rel='stylesheet', href='/css/baseEle/createCategory.css')
+  link(rel='stylesheet', href='https://fonts.googleapis.com/icon?family=Material+Icons')
+
+  div.form
+    table
+      thead
+        tr
+          th Title
+          th Input
+      tbody
+        tr
+          td ID
+          td
+            input(type="text", value="", readonly="true")
+        tr
+          td Name
+          td
+            input(type="text", name="categoryName-text", value="", placeholder="category name")
+        tr
+          td Gender
+          td
+            input(type="radio", name="gender", value="1", checked)
+            | male
+            input(type="radio", name="gender", value="2", disabled="true")
+            | female
+        tr
+          td Parent
+          td
+            div.category-select
+              select(name="categoryParentId-select")
+                option(disabled=" true", selected="true") -- select gender first --
+        tr
+          td Picture
+          td
+            input(type='file', name="categoryImage-file")
+  button.sumbit#categoryCreate-button Create
+  div.category-create-response#category-create-response

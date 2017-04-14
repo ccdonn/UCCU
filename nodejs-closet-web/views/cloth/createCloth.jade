@@ -1,0 +1,46 @@
+extends ../import/_layout.jade
+
+block content
+  script(src='/js/cloth/createCloth.js')
+  link(rel='stylesheet', href='/css/cloth/createCloth.css')
+
+  //- div addCloth
+  table
+    thead
+      tr
+        th(colspan="2") Cloth
+      tr
+        th Field
+        th Value
+    tbody
+      tr
+        td
+          div.header Name
+        td
+          div.name-input
+            input(type=text)
+      tr
+        td
+          div.header Category
+        td
+          div.category-select
+      tr
+        td
+          div.header Color
+        td
+          div.color-select
+
+      tr
+        td
+          div.header Link
+        td
+          div
+            input(type="text")
+      tr
+        td
+          div.header Picture
+        td
+          div
+            input(type="file")
+  button.sumbit#clothCreate-button Create
+  div.cloth-create-response#cloth-create-response

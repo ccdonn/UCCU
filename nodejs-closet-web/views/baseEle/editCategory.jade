@@ -1,0 +1,56 @@
+extends ../import/_layout.jade
+
+block content
+  script(src='/js/baseEle/editCategory.js')
+  link(rel='stylesheet', href='/css/baseEle/editCategory.css')
+  link(rel='stylesheet', href='https://fonts.googleapis.com/icon?family=Material+Icons')
+
+  div.form
+    table
+      thead
+        tr
+          th Title
+          th Input
+      tbody
+        tr
+          td ID
+          td
+            input(type="text", name="categoryId-text", value="#{data.categoryId}", readonly="true")
+            input(type="text", name="categoryParentId-text", value="#{data.parent}", style="display:none;")
+        tr
+          td Name
+          td
+            input(type="text", name="categoryName-text", value="#{data.name}", placeholder="inputName")
+        tr
+          td Gender
+          td
+            input(type="radio", name="gender", value="1", checked)
+            | male
+            input(type="radio", name="gender", value="2", disabled="true")
+            | female
+        tr
+          td Parent
+          td
+            if data.parent==0
+              div -
+            else
+              div.category-select
+                select
+                  option(disabled=" true", selected="true") -- select gender first --
+        //- tr
+          //- td Status
+          //- td
+            //- input(type="radio", name="status", value="1", checked)
+            //- | Active
+            //- input(type="radio", name="status", value="2")
+            //- | Inactive
+        tr
+          td Picture
+          td
+            div
+              input(type="file", name="categoryImage-file")
+            div
+              img(src="#{data.picture}", style="width:100px;")
+  div.sumbit
+    button#categoryUpdate-button Update
+  div.category-update-response#category-update-response

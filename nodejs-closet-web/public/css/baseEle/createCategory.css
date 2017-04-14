@@ -1,0 +1,87 @@
+/* simple way */
+/*
+th, td {
+  padding: 10px;
+}
+
+table {
+  margin: 50px auto;
+}
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: #333;
+}
+
+table {
+  text-align: left;
+  line-height: 40px;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 2px solid #808080;
+  width: 450px;
+  margin: 50px auto;
+  border-radius: .25rem;
+}
+
+thead tr:first-child {
+  background: #808080;
+  color: #fff;
+  border: none;
+
+}
+
+th:first-child,
+td:first-child {
+  padding: 0 15px 0 20px;
+}
+
+thead tr:last-child th {
+  border-bottom: 3px solid #ddd;
+}
+
+tbody tr {
+  /*height: 100px;*/
+}
+
+tbody tr:hover {
+  background-color: rgba(237, 28, 64, .1);
+  cursor: default;
+}
+
+tbody tr:last-child td {
+  border: none;
+}
+
+tbody td {
+  border-bottom: 1px solid #ddd;
+}
+
+td:last-child {
+  /*
+  text-align: right;
+  */
+  padding-right: 10px;
+}
+
+.sumbit {
+  position: absolute;
+  left: 50%;
+  margin: 10px;
+  margin-left: -65px;
+  text-align: center;
+}
+
+.category-create-response {
+  position: absolute;
+  left: 50%;
+  margin: 10px;
+  text-align: center;
+}

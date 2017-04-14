@@ -1,0 +1,50 @@
+extends ../import/_layout.jade
+
+block content
+  script(src='/js/cloth/editCloth.js')
+  link(rel='stylesheet', href='/css/cloth/editCloth.css')
+
+  //- div editCloth
+  table
+    thead
+      tr
+        th(colspan="2") Cloth
+      tr
+        th Field
+        th Value
+    tbody
+      tr
+        td
+          div.header Name
+        td
+          div.name-input
+            input(type=text, value="#{data.itemId}", style="width:350px;display:none;")
+            input(type=text, value="#{data.itemName}", style="width:350px")
+      tr
+        td
+          div.header Category
+        td
+          div#category(categoryid="#{data.category.categoryId}")
+          div.category-select
+      tr
+        td
+          div.header Color
+        td
+          div#color(colorid="#{data.color.colorId}")
+          div.color-select
+      tr
+        td
+          div.header Link
+        td
+          div
+            input(type="text", value="#{data.link}", style="width:350px")
+      tr
+        td
+          div.header Picture
+        td
+          div
+            input(type="file")
+          div
+            img(src="#{data.picture}")
+  button.sumbit#clothUpdate-button Update
+  div.cloth-update-response#cloth-update-response
